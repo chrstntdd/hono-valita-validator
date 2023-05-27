@@ -2,3 +2,8 @@ name = "list-api"
 main = "./dist/app-run.cf-worker.mjs"
 compatibility_date = "2023-05-12"
 workers_dev = false
+
+[env.development]
+[env.development.build]
+command = "pnpm build-dev"
+watch_dir = "src"

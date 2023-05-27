@@ -3,7 +3,7 @@
 	"version": "0.0.0",
 	"private": true,
 	"scripts": {
-		"dev": "wrangler dev --port 3001",
+		"dev": "wrangler dev --env development --port 3001",
 		"devv": "vite dev",
 		"test": "vitest",
 		"build-prod": "vite build --mode production --ssr src/app-run.cf-worker.ts",
