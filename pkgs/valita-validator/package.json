@@ -1,0 +1,41 @@
+{
+	"name": "@ct/valita-validator",
+	"description": "A validator for hono with valita",
+	"version": "0.0.1",
+	"license": "MIT",
+	"type": "module",
+	"sideEffects": false,
+	"files": [
+		"src",
+		"dist"
+	],
+	"types": "./dist/types/valita-validator.d.ts",
+	"main": "./dist/valita-validator.js",
+	"module": "./dist/valita-validator.mjs",
+	"exports": {
+		".": {
+			"import": "./dist/valita-validator.mjs",
+			"require": "./dist/valita-validator.js",
+			"types": "./dist/types/valita-validator.d.ts"
+		},
+		"./package.json": "./package.json"
+	},
+	"scripts": {
+		"fmt": "prettier src --write",
+		"emit-types": "tsc --emitDeclarationOnly",
+		"build": "node make.js",
+		"build-all": "pnpm build && pnpm emit-types"
+	},
+	"devDependencies": {
+		"esbuild": "^0.17.19",
+		"typescript": "^5.0.4"
+	},
+	"dependencies": {
+		"@badrap/valita": "^0.2.0",
+		"hono": "^3.2.2"
+	},
+	"peerDependencies": {
+		"@badrap/valita": "^0.2.0",
+		"hono": "^3.2.2"
+	}
+}

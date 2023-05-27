@@ -1,0 +1,4 @@
+name = "list-api"
+main = "./dist/app-run.cf-worker.mjs"
+compatibility_date = "2023-05-12"
+workers_dev = false

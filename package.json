@@ -1,0 +1,30 @@
+{
+	"name": "domestic-tl",
+	"version": "1.0.0",
+	"description": "",
+	"keywords": [],
+	"author": "",
+	"license": "MIT",
+	"private": true,
+	"workspaces": [
+		"pkgs/*",
+		"apps/*"
+	],
+	"engines": {
+		"node": ">=18.7.0",
+		"pnpm": ">=8"
+	},
+	"scripts": {
+		"fmt-all": "pnpm --recursive --parallel fmt",
+		"build-pkgs": "pnpm -F './pkgs/**' build"
+	},
+	"prettier": {
+		"useTabs": true,
+		"trailingComma": "all",
+		"semi": false
+	},
+	"devDependencies": {
+		"prettier": "^2.8.8",
+		"typescript": "^5.0.4"
+	}
+}
