@@ -4,7 +4,7 @@
 		"declaration": true,
 		"declarationMap": true,
 		"esModuleInterop": true,
-		"lib": ["ESNext", "DOM", "WebWorker"],
+		"lib": ["ESNext", "DOM"],
 		"module": "NodeNext",
 		"moduleResolution": "node",
 		"noImplicitAny": true,
@@ -13,6 +13,9 @@
 		"declarationDir": "dist/types",
 		"skipLibCheck": true,
 		"strict": true,
+		"strictNullChecks": true,
+		"noUncheckedIndexedAccess": true,
+		"importsNotUsedAsValues": "error",
 		"target": "ESNext"
 	},
 	"include": ["src"]
