@@ -22,23 +22,32 @@
 	},
 	"scripts": {
 		"fmt": "prettier src --write",
+		"fmt:ci": "prettier src --check",
 		"test": "vitest",
+		"lint": "eslint src",
 		"emit-types": "tsc --emitDeclarationOnly",
+		"tc": "tsc --noEmit",
 		"build": "vite build --mode production",
 		"build-all": "pnpm build && pnpm emit-types"
 	},
 	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "^5.59.7",
+		"@typescript-eslint/parser": "^5.59.7",
 		"@vitest/coverage-c8": "^0.31.1",
+		"eslint": "^8.41.0",
+		"eslint-config-prettier": "^8.8.0",
+		"eslint-import-resolver-typescript": "^3.5.5",
+		"eslint-plugin-import": "^2.27.5",
 		"typescript": "^5.0.4",
 		"vite": "^4.3.9",
 		"vitest": "^0.31.1"
 	},
 	"dependencies": {
-		"@badrap/valita": "^0.2.0",
-		"hono": "^3.2.2"
+		"@badrap/valita": "^0.2.1",
+		"hono": "^3.2.3"
 	},
 	"peerDependencies": {
 		"@badrap/valita": "^0.2.0",
-		"hono": "^3.2.2"
+		"hono": "^3.2.3"
 	}
 }

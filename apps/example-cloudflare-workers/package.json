@@ -13,9 +13,9 @@
 		"fmt": "prettier src --write"
 	},
 	"dependencies": {
-		"@badrap/valita": "^0.2.0",
+		"@badrap/valita": "^0.2.1",
 		"@ct/valita-validator": "workspace:^",
-		"hono": "^3.2.2"
+		"hono": "^3.2.3"
 	},
 	"devDependencies": {
 		"@cloudflare/workers-types": "^4.20230518.0",

@@ -1,22 +1,9 @@
 {
+	"extends": ["../../tsconfig.json"],
 	"compilerOptions": {
-		"allowSyntheticDefaultImports": true,
-		"declaration": true,
-		"declarationMap": true,
-		"esModuleInterop": true,
 		"lib": ["ESNext", "DOM"],
-		"module": "NodeNext",
-		"moduleResolution": "node",
-		"noImplicitAny": true,
-		"noImplicitReturns": true,
 		"outDir": "dist",
-		"declarationDir": "dist/types",
-		"skipLibCheck": true,
-		"strict": true,
-		"strictNullChecks": true,
-		"noUncheckedIndexedAccess": true,
-		"importsNotUsedAsValues": "error",
-		"target": "ESNext"
+		"declarationDir": "dist/types"
 	},
 	"include": ["src"]
 }

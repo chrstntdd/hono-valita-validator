@@ -12,8 +12,9 @@
 	],
 	"engines": {
 		"node": ">=18.7.0",
-		"pnpm": ">=8"
+		"pnpm": ">=8.6.0"
 	},
+	"packageManager": "pnpm@8.6.0",
 	"scripts": {
 		"fmt-all": "pnpm --recursive --parallel fmt",
 		"build-pkgs": "pnpm -F './pkgs/**' build"
