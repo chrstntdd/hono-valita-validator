@@ -1,6 +1,6 @@
 # Valita validator middleware for Hono
 
-![Build](https://github.com/chrstntdd/hono-valita-validator/actions/workflows/ci.ymal/badge.svg?branch=main)
+[![Main CI](https://github.com/chrstntdd/hono-valita-validator/actions/workflows/ci.yaml/badge.svg)](https://github.com/chrstntdd/hono-valita-validator/actions/workflows/ci.yaml)
 
 Validator middleware using [Valita](https://github.com/badrap/valita) for [Hono](https://honojs.dev) applications.
 Define your schemas with Valita and validate requests.
