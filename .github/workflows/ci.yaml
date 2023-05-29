@@ -24,13 +24,8 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: pnpm
 
-      - name: Install dependencies
-        uses: pnpm/action-setup@v2.2.4
-        with:
-          version: ${{ env.PNPM_VERSION }}
-          run_install: |
-            - recursive: false
-              args: [--filter, "@ct/valita-validator", --frozen-lockfile, --prefer-offline]
+      - name: 📥 Monorepo install
+        uses: ./.github/actions/pnpm-install
 
       - name: Format check
         run: pnpm --filter @ct/valita-validator fmt:ci
@@ -52,13 +47,8 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: pnpm
 
-      - name: Install dependencies
-        uses: pnpm/action-setup@v2.2.4
-        with:
-          version: ${{ env.PNPM_VERSION }}
-          run_install: |
-            - recursive: false
-              args: [--filter, "@ct/valita-validator", --frozen-lockfile, --prefer-offline]
+      - name: 📥 Monorepo install
+        uses: ./.github/actions/pnpm-install
 
       - name: Test
         run: pnpm --filter @ct/valita-validator test
@@ -82,13 +72,8 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: pnpm
 
-      - name: Install TypeScript type checker dependencies
-        uses: pnpm/action-setup@v2.2.4
-        with:
-          version: ${{ env.PNPM_VERSION }}
-          run_install: |
-            - recursive: false
-              args: [--filter, "@ct/valita-validator", --frozen-lockfile, --prefer-offline, --ignore-scripts]
+      - name: 📥 Monorepo install
+        uses: ./.github/actions/pnpm-install
 
       - name: Type check
         run: pnpm --filter "@ct/valita-validator" tc
