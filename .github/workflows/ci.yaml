@@ -22,17 +22,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: 'pnpm'
-
-      - name: Cache pnpm modules
-        uses: actions/cache@v3
-        env:
-          cache-name: cache-pnpm-modules
-        with:
-          path: ~/.pnpm-store
-          key: ${{ runner.os }}-test-${{ env.cache-name }}-${{ env.NODE_VERSION }}-${{ hashFiles('**/package.json') }}
-          restore-keys: |
-            ${{ runner.os }}-test-${{ env.cache-name }}-${{ env.NODE_VERSION }}-
+          cache: pnpm
 
       - name: Install dependencies
         uses: pnpm/action-setup@v2.2.4
@@ -60,17 +50,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: 'pnpm'
-
-      - name: Cache pnpm modules
-        uses: actions/cache@v3
-        env:
-          cache-name: cache-pnpm-modules
-        with:
-          path: ~/.pnpm-store
-          key: ${{ runner.os }}-test-${{ env.cache-name }}-${{ env.NODE_VERSION }}-${{ hashFiles('**/package.json') }}
-          restore-keys: |
-            ${{ runner.os }}-test-${{ env.cache-name }}-${{ env.NODE_VERSION }}-
+          cache: pnpm
 
       - name: Install dependencies
         uses: pnpm/action-setup@v2.2.4
@@ -100,17 +80,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: 'pnpm'
-
-      - name: Cache pnpm modules
-        uses: actions/cache@v3
-        env:
-          cache-name: cache-pnpm-modules
-        with:
-          path: ~/.pnpm-store
-          key: ${{ runner.os }}-type-check-${{ env.cache-name }}-${{ env.NODE_VERSION }}-${{ hashFiles('**/package.json') }}
-          restore-keys: |
-            ${{ runner.os }}-type-check-${{ env.cache-name }}-${{ env.NODE_VERSION }}-
+          cache: pnpm
 
       - name: Install TypeScript type checker dependencies
         uses: pnpm/action-setup@v2.2.4
@@ -119,11 +89,6 @@ jobs:
           run_install: |
             - recursive: false
               args: [--filter, "@ct/valita-validator", --frozen-lockfile, --prefer-offline, --ignore-scripts]
-
-      - uses: actions/setup-node@v3
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'pnpm'
 
       - name: Type check
         run: pnpm --filter "@ct/valita-validator" tc
