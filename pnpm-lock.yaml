@@ -54,9 +54,6 @@ importers:
       '@vitest/coverage-c8':
         specifier: ^0.31.1
         version: 0.31.1(vitest@0.31.1)
-      esbuild:
-        specifier: ^0.17.19
-        version: 0.17.19
       typescript:
         specifier: ^5.0.4
         version: 5.0.4
