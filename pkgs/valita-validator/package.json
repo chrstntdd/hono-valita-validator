@@ -22,8 +22,10 @@
 	},
 	"scripts": {
 		"fmt": "prettier src --write",
+		"fmt:ci": "prettier src --check",
 		"test": "vitest",
 		"emit-types": "tsc --emitDeclarationOnly",
+		"tc": "tsc --noEmit",
 		"build": "vite build --mode production",
 		"build-all": "pnpm build && pnpm emit-types"
 	},
