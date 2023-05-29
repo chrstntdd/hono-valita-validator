@@ -12,9 +12,9 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - uses: pnpm/action-setup@v2.2.1
+      - uses: pnpm/action-setup@v2.2.4
         with:
           version: ${{ env.PNPM_VERSION }}
 
@@ -35,7 +35,7 @@ jobs:
             ${{ runner.os }}-test-${{ env.cache-name }}-${{ env.NODE_VERSION }}-
 
       - name: Install dependencies
-        uses: pnpm/action-setup@v2.2.1
+        uses: pnpm/action-setup@v2.2.4
         with:
           version: ${{ env.PNPM_VERSION }}
           run_install: |
@@ -50,9 +50,9 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - uses: pnpm/action-setup@v2.2.1
+      - uses: pnpm/action-setup@v2.2.4
         with:
           version: ${{ env.PNPM_VERSION }}
 
@@ -73,7 +73,7 @@ jobs:
             ${{ runner.os }}-test-${{ env.cache-name }}-${{ env.NODE_VERSION }}-
 
       - name: Install dependencies
-        uses: pnpm/action-setup@v2.2.1
+        uses: pnpm/action-setup@v2.2.4
         with:
           version: ${{ env.PNPM_VERSION }}
           run_install: |
@@ -90,9 +90,9 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - uses: pnpm/action-setup@v2.2.1
+      - uses: pnpm/action-setup@v2.2.4
         with:
           version: ${{ env.PNPM_VERSION }}
 
@@ -113,7 +113,7 @@ jobs:
             ${{ runner.os }}-type-check-${{ env.cache-name }}-${{ env.NODE_VERSION }}-
 
       - name: Install TypeScript type checker dependencies
-        uses: pnpm/action-setup@v2.2.1
+        uses: pnpm/action-setup@v2.2.4
         with:
           version: ${{ env.PNPM_VERSION }}
           run_install: |
