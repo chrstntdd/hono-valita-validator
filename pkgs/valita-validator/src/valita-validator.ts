@@ -1,6 +1,7 @@
+import { validator } from "hono/validator"
+
 import type { Type, Infer, Err } from "@badrap/valita"
 import type { Context, Env, MiddlewareHandler, ValidationTargets } from "hono"
-import { validator } from "hono/validator"
 
 type Hook<T extends Type, E extends Env, P extends string> = (
 	result:
@@ -23,6 +24,7 @@ export function valitaValidator<
 	{ schema, parseOpts }: { schema: T; parseOpts?: Parameters<T["try"]>[1] },
 	hook?: Hook<T, E, P>,
 ): MiddlewareHandler<E, P, V> {
+	// eslint-disable-next-line @typescript-eslint/promise-function-async
 	return validator(target, (data, ctx) => {
 		let result = schema.try(data, parseOpts || { mode: "strict" })
 
@@ -39,7 +41,7 @@ export function valitaValidator<
 		}
 
 		if (result.ok) {
-			return data
+			return data as Infer<T>
 		} else {
 			return ctx.json({ success: false, errors: result.issues }, 400)
 		}
