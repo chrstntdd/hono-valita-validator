@@ -98,6 +98,6 @@ jobs:
       - name: 📥 Monorepo install
         uses: ./.github/actions/pnpm-install
 
-      - name: Type check
+      - name: ESLint
         run: pnpm --filter "@ct/valita-validator" lint
 
