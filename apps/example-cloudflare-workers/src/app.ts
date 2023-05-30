@@ -1,6 +1,6 @@
 import { Hono } from "hono"
 import * as v from "@badrap/valita"
-import { valitaValidator } from "@ct/valita-validator"
+import { valitaValidator } from "@chrstntdd/valita-validator"
 
 import type { HonoEnv } from "~/types"
 

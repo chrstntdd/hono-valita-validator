@@ -14,7 +14,7 @@ As plain middleware
 ```ts
 import { Hono } from "hono"
 import * as v from "@badrap/valita"
-import { valitaValidator } from "@ct/valita-validator"
+import { valitaValidator } from "@chrstntdd/valita-validator"
 
 let app = new Hono()
 
@@ -32,7 +32,7 @@ Combine middlewares to validate multiple components of the request.
 ```ts
 import { Hono } from "hono"
 import * as v from "@badrap/valita"
-import { valitaValidator } from "@ct/valita-validator"
+import { valitaValidator } from "@chrstntdd/valita-validator"
 
 let app = new Hono()
 
@@ -57,7 +57,7 @@ You can use the hook based API instead to control the failure case.
 ```ts
 import { Hono } from "hono"
 import * as v from "@badrap/valita"
-import { valitaValidator } from "@ct/valita-validator"
+import { valitaValidator } from "@chrstntdd/valita-validator"
 
 let app = new Hono()
 

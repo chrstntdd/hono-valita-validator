@@ -1,5 +1,5 @@
 {
-	"name": "@ct/valita-validator",
+	"name": "@chrstntdd/valita-validator",
 	"description": "A validator for hono with valita",
 	"version": "0.0.1",
 	"license": "MIT",
