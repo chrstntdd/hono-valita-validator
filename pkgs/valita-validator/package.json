@@ -1,14 +1,25 @@
 {
 	"name": "@chrstntdd/valita-validator",
-	"description": "A validator for hono with valita",
-	"version": "0.0.1",
+	"description": "A request validator for Hono with Valita",
+	"version": "0.0.1-alpha0",
 	"license": "MIT",
 	"type": "module",
 	"sideEffects": false,
+	"private": false,
 	"files": [
 		"src",
 		"dist"
 	],
+	"keywords": [
+		"hono",
+		"schema",
+		"vailta",
+		"validator"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/chrstntdd/hono-valita-validator.git"
+	},
 	"types": "./dist/types/valita-validator.d.ts",
 	"main": "./dist/valita-validator.cjs",
 	"module": "./dist/valita-validator.js",
