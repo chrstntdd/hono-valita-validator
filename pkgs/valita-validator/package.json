@@ -8,7 +8,8 @@
 	"private": false,
 	"files": [
 		"src",
-		"dist"
+		"dist",
+		"README.md"
 	],
 	"keywords": [
 		"hono",
