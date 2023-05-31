@@ -28,7 +28,7 @@ jobs:
         uses: ./.github/actions/pnpm-install
 
       - name: Format check
-        run: pnpm --filter @ct/valita-validator fmt:ci
+        run: pnpm --filter @chrstntdd/valita-validator fmt:ci
 
   test:
     runs-on: ubuntu-latest
@@ -51,7 +51,7 @@ jobs:
         uses: ./.github/actions/pnpm-install
 
       - name: Test
-        run: pnpm --filter @ct/valita-validator test
+        run: pnpm --filter @chrstntdd/valita-validator test
         env:
           NODE_ENV: test
 
@@ -76,7 +76,7 @@ jobs:
         uses: ./.github/actions/pnpm-install
 
       - name: Type check
-        run: pnpm --filter "@ct/valita-validator" tc
+        run: pnpm --filter "@chrstntdd/valita-validator" tc
 
   eslint:
     runs-on: ubuntu-latest
@@ -99,5 +99,5 @@ jobs:
         uses: ./.github/actions/pnpm-install
 
       - name: ESLint
-        run: pnpm --filter "@ct/valita-validator" lint
+        run: pnpm --filter "@chrstntdd/valita-validator" lint
 
