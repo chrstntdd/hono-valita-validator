@@ -1,7 +1,7 @@
 {
 	"name": "@chrstntdd/valita-validator",
 	"description": "A request validator for Hono with Valita",
-	"version": "0.0.1-alpha0",
+	"version": "0.0.1-alpha1",
 	"license": "MIT",
 	"type": "module",
 	"sideEffects": false,
