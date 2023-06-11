@@ -31,7 +31,7 @@ export function valitaValidator<
 		if (hook) {
 			let hookResult = hook(
 				result.ok
-					? { success: true, data }
+					? { success: true, data: result.value }
 					: { success: false, errors: result.issues },
 				ctx,
 			)
@@ -41,7 +41,7 @@ export function valitaValidator<
 		}
 
 		if (result.ok) {
-			return data as Infer<T>
+			return result.value
 		} else {
 			return ctx.json({ success: false, errors: result.issues }, 400)
 		}

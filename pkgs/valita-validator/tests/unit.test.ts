@@ -252,3 +252,56 @@ describe("hooks", () => {
 		expect(res.status).toEqual(418)
 	})
 })
+
+describe("parsed value available to user", () => {
+	let bodySchema = v.object({
+		name: v.string(),
+		optWithFallback: v.string().optional().default(null),
+	})
+
+	test("Works for middleware use", async () => {
+		let app = new Hono()
+
+		app.post(
+			"/hello",
+			valitaValidator("json", { schema: bodySchema }),
+			async (ctx) => {
+				let bod = ctx.req.valid("json")
+
+				return ctx.json(bod)
+			},
+		)
+		let name = "Whomst"
+		let res = await app.request(
+			new Request("http://localhost/hello", {
+				method: "POST",
+				body: JSON.stringify({ name }),
+			}),
+		)
+
+		expect(res.status).toEqual(200)
+		expect(await res.json()).toEqual({ name, optWithFallback: null })
+	})
+
+	test("Works for hooks", async () => {
+		let app = new Hono()
+		app.post(
+			"/hooks",
+			valitaValidator("json", { schema: bodySchema }, async (r, ctx) => {
+				let bod = r.success ? r.data : null
+
+				return ctx.json(bod)
+			}),
+		)
+		let name = "Hooky"
+		let res = await app.request(
+			new Request("http://localhost/hooks", {
+				method: "POST",
+				body: JSON.stringify({ name }),
+			}),
+		)
+
+		expect(res.status).toEqual(200)
+		expect(await res.json()).toEqual({ name, optWithFallback: null })
+	})
+})
